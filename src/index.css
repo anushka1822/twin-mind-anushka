@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors - Cognitive Premium */
+  --surface: #f9f9f9;
+  --surface-dim: #dadada;
+  --surface-bright: #f9f9f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f3f3;
+  --surface-container: #eeeeee;
+  --surface-container-high: #e8e8e8;
+  --surface-container-highest: #e2e2e2;
+  --on-surface: #1a1c1c;
+  --on-surface-variant: #42474e;
+  --inverse-surface: #2f3131;
+  --inverse-on-surface: #f0f1f1;
+  --outline: #72787f;
+  --outline-variant: #c2c7cf;
+  --surface-tint: #346287;
+  
+  --primary: #002943;
+  --on-primary: #ffffff;
+  --primary-container: #044063;
+  --on-primary-container: #7facd4;
+  --inverse-primary: #9ecbf5;
+  
+  --secondary: #9c4400;
+  --on-secondary: #ffffff;
+  --secondary-container: #fc7200;
+  --on-secondary-container: #582300;
+  
+  --tertiary: #272727;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #3d3d3d;
+  --on-tertiary-container: #a8a8a8;
+  
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  --background: #f9f9f9;
+  --on-background: #1a1c1c;
+
+  /* Typography */
+  --font-manrope: 'Manrope', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Spacing */
+  --container-margin: 24px;
+  --gutter: 16px;
+  --stack-sm: 8px;
+  --stack-md: 16px;
+  --stack-lg: 32px;
+  --section-padding: 48px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+}
+
+/* Custom scrollbar for light mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* AI Highlight Effect */
+.ai-highlight {
+  border-left: 4px solid var(--primary);
+  background-color: rgba(4, 64, 99, 0.03);
+}
+
+/* Chat Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--outline-variant);
+}
+
+/* Markdown styles for chat messages */
+.markdown-container h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+.markdown-container h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+.markdown-container h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+.markdown-container p { margin-bottom: 0.75rem; }
+.markdown-container ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.markdown-container ol { list-style-type: decimal; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.markdown-container li { margin-bottom: 0.25rem; }
+.markdown-container strong { font-weight: 700; color: inherit; }
+.markdown-container code { background: rgba(0,0,0,0.05); padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+
+/* Custom Thin Scrollbar for Chat Input */
+.scrollbar-chat::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-chat::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-chat::-webkit-scrollbar-thumb {
+  background: #dadada;
+  border-radius: 10px;
+}
+.scrollbar-chat::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0;
+}
+
+/* UI Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: slide-down 0.3s ease-out forwards;
+}
