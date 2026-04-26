@@ -1,4 +1,6 @@
-# TwinMind — Live Suggestions
+# AutoPilot — Live Suggestions
+
+**Live Demo:** [twin-mind-anushka.vercel.app](https://twin-mind-anushka.vercel.app/)
 
 A purely client-side AI meeting copilot that listens to live audio, generates contextual suggestions on the fly, and lets you deep-dive into the conversation via chat.
 
@@ -29,4 +31,4 @@ Getting an open-source 120B model to behave inside a strict UI required some hea
 
 ### ⚖️ Tradeoffs & Future Scaling
 *   **Audio Chunking vs. Streaming**: Right now, I'm using the browser's native `MediaRecorder` API to slice audio into 30-second chunks for Whisper. It works surprisingly well for an MVP, but stopping and starting the recorder can drop tiny fractions of a second of audio. At production scale, I'd swap this for a continuous WebSocket stream to a dedicated ingest server.
-*   **Client-Side API Calls**: Since the assignment specifically required users to paste their own API key in the UI, I kept the architecture entirely client-side. It makes deployment frictionless and keeps latency incredibly low. Obviously, in a real SaaS environment where TwinMind provides the API keys, I'd migrate the Groq calls to a secure backend proxy to protect the credentials and handle rate-limiting.
+*   **Client-Side API Calls**: Since the assignment specifically required users to paste their own API key in the UI, I kept the architecture entirely client-side. It makes deployment frictionless and keeps latency incredibly low. Obviously, in a real SaaS environment where AutoPilot provides the API keys, I'd migrate the Groq calls to a secure backend proxy to protect the credentials and handle rate-limiting.

@@ -42,7 +42,7 @@ const ChatColumn = () => {
           messages: [
             {
               role: "system",
-              content: `You are TwinMind, a real-time, in-ear AI meeting copilot. The user is in a live meeting. Provide a fast, highly analytical answer based on the transcript.
+              content: `You are AutoPilot, a real-time, in-ear AI meeting copilot. The user is in a live meeting. Provide a fast, highly analytical answer based on the transcript.
 
 STRICT FORMATTING RULES:
 
@@ -181,7 +181,7 @@ ${contextText}`
               <div className="w-5 h-5 rounded-md bg-surface-container-high flex items-center justify-center">
                 <Bot size={12} className="text-primary" />
               </div>
-              <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider font-sans">TwinMind</span>
+              <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider font-sans">AutoPilot</span>
               <Loader2 size={10} className="animate-spin text-primary" />
             </div>
             <div className="bg-white p-3 rounded-2xl rounded-tl-none border border-outline-variant shadow-sm px-5">
@@ -200,7 +200,7 @@ ${contextText}`
           <div className="flex-1 relative">
             <textarea 
               ref={textareaRef}
-              placeholder="Ask TwinMind anything... (Shift+Enter for new line)"
+              placeholder="Ask AutoPilot anything... (Shift+Enter for new line)"
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
               onKeyDown={handleKeyDown}

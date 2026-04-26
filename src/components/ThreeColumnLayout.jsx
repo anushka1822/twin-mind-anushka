@@ -17,7 +17,7 @@ const ThreeColumnLayout = () => {
 
   const handleExport = () => {
     const sessionData = {
-      sessionName: "TwinMind Meeting Session",
+      sessionName: "AutoPilot Meeting Session",
       exportTime: new Date().toISOString(),
       transcript,
       suggestions: suggestionsBatches,
@@ -28,7 +28,7 @@ const ThreeColumnLayout = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `twinmind-session-export-${Date.now()}.json`;
+    link.download = `autopilot-session-export-${Date.now()}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -52,7 +52,7 @@ const ThreeColumnLayout = () => {
           </div>
           <div>
             <h1 className="text-[20px] font-bold tracking-tight text-primary font-heading leading-tight">
-              TwinMind
+              AutoPilot
             </h1>
             <div className="flex items-center gap-1.5 opacity-70">
               <Sparkles size={10} className="text-secondary" />
@@ -104,7 +104,7 @@ const ThreeColumnLayout = () => {
           <span className="text-label-sm font-medium text-on-surface-variant">Cognitive Premium v1.0</span>
         </div>
         <div className="text-label-sm font-semibold text-on-surface-variant uppercase tracking-widest">
-          © 2026 TwinMind AI
+          © 2026 AutoPilot AI
         </div>
       </footer>
     </div>
